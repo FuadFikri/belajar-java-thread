@@ -89,4 +89,16 @@ public class ThreadTest {
         System.out.println("program selesai");
     }
 
+
+
+    @Test
+    public void threadName(){
+        Thread thread = new Thread(() -> {
+            System.out.println("hello from thread " + Thread.currentThread().getName());
+        });
+
+        thread.setName("fikri");
+        thread.start();
+    }
+
 }

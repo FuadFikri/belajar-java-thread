@@ -19,3 +19,15 @@ source : Programmer Zaman Now
 
 ### Thread Join
 - menunggu sampai sebuah thread selesai
+
+### Thread Interrupt
+- Interrupt merupakan mengirim sinyal ke thread bahwa thread tersebut harus berhenti melakukan pekerjaannya saat ini
+- Untuk melakukan interrupt, kita bisa menggunakan method interrupt() pada thread
+- Saat kita memanggil method interrupt(), secara otomatis Thread.interrupted() akan bernilai true
+- kode program kita pada Runnable harus melakukan pengecekan interrupted, jika tidak, sinyal interrupt tidak ada gunanya
+
+
+### Thread name
+- Thread name secara default akan menggunakan nama Thread-{counter}
+- Namun kita juga bisa mengubahnya dengan menggunakan method setName(name), dan getName() untuk mendapatkan nama thread nya
+
