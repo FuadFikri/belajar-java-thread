@@ -60,4 +60,33 @@ public class ThreadTest {
         System.out.println("program selesai");
     }
 
+    @Test
+    public void threadInterrupt() throws InterruptedException {
+        Runnable runnable = () -> {
+            for (int i = 0; i < 10; i++) {
+                System.out.println("runnable :" +i);
+                try {
+                    Thread.sleep(1_000L);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    return;  // ketika ada interrupt maka berhenti
+                }
+
+//                real case gapakai thread sleep
+//                dicek menggunakan interrupted()
+//                if (Thread.interrupted()){
+//                    return;
+//                }
+            }
+        };
+
+        Thread thread1 = new Thread(runnable);
+        thread1.start();
+        Thread.sleep(5000L);
+        thread1.interrupt(); // setelah 5 detik, lakukan interrupt agar runnable dihentikan
+        System.out.println("menunggu selesai");
+        thread1.join();
+        System.out.println("program selesai");
+    }
+
 }
