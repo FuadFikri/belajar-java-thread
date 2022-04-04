@@ -31,5 +31,10 @@ source : Programmer Zaman Now
 - Thread name secara default akan menggunakan nama Thread-{counter}
 - Namun kita juga bisa mengubahnya dengan menggunakan method setName(name), dan getName() untuk mendapatkan nama thread nya
 
-## Thread state
+### Thread state
 - status sebuah thread
+
+
+### Thread daemon
+- Jika kita mengubah thread menjadi daemon thread, menggunakan setDaemon(true), maka secara otomatis thread tersebut menjadi daemon thread
+- Daemon thread tidak akan ditunggu jika memang program Java akan berhenti
