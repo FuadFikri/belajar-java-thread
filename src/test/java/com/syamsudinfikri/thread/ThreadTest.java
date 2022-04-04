@@ -101,4 +101,18 @@ public class ThreadTest {
         thread.start();
     }
 
+    @Test
+    public void threadState() throws InterruptedException {
+        Thread thread = new Thread(() -> {
+            System.out.println(Thread.currentThread().getState());
+            System.out.println("hello from thread " + Thread.currentThread().getName());
+        });
+
+        thread.setName("fikri");
+        System.out.println(thread.getState());
+        thread.start();
+        thread.join();
+        System.out.println(thread.getState());
+    }
+
 }

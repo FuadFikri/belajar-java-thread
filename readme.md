@@ -31,3 +31,5 @@ source : Programmer Zaman Now
 - Thread name secara default akan menggunakan nama Thread-{counter}
 - Namun kita juga bisa mengubahnya dengan menggunakan method setName(name), dan getName() untuk mendapatkan nama thread nya
 
+## Thread state
+- status sebuah thread
