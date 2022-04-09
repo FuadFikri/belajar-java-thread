@@ -60,4 +60,8 @@ source : Programmer Zaman Now
   - ketika synchronized method dipanggil oleh thread, thread akan mencoba mendapatkan intrinsic lock,
   - setelah method selesai(sukses/error) maka thread akan mengembalikan intrinsic lock
   - jika menggunakan synchronized method, intrinsic lock otomatis dihandle oleh java
-  
+
+#### synchronized statement
+ - saat kita menggunakan synchronized method, secara otomatis selutuh method akan ter synchronization
+ - jika kita ingin menggunakan synchronization pada kode tertentu, kita bisa menggunakan synchronized statement
+ - jika menggunakan synchronized statement, intrinsic lock harus dihandle manual
