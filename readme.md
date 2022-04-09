@@ -38,3 +38,8 @@ source : Programmer Zaman Now
 ### Thread daemon
 - Jika kita mengubah thread menjadi daemon thread, menggunakan setDaemon(true), maka secara otomatis thread tersebut menjadi daemon thread
 - Daemon thread tidak akan ditunggu jika memang program Java akan berhenti
+
+
+### Race Condition
+- keadaan ketika sebuah data diubah secara bersamaan oleh beberapa thread sekaligus
+- 
