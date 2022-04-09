@@ -42,4 +42,22 @@ source : Programmer Zaman Now
 
 ### Race Condition
 - keadaan ketika sebuah data diubah secara bersamaan oleh beberapa thread sekaligus
-- 
+
+### synchronization 
+- Masalah race condition bisa diselesaikan dengan synchronization
+- synchronization merupakan fitur yg memaksa kode program hanya boleh diakses dan dieksekusi oleh 1 thread saja
+- hal ini menyebabkan thread lain yang akan mengakses kode tersebut harus menunggu thread yg lebih dulu mengakses.
+- sehingga proses synchronization ini lebih lambat 
+- namun proses synchronization lebih aman karena tidak akan terjadi race condition
+
+
+#### synchronized method
+- menambahkan kata kunci thread pada method
+
+##### Intrinsic Lock
+- synchronization sebenarnya menggunakan lock
+  - ketika kita menggunakan synchronized method, secara otomatis java akan membuat intrinsic lock atau monitor lock
+  - ketika synchronized method dipanggil oleh thread, thread akan mencoba mendapatkan intrinsic lock,
+  - setelah method selesai(sukses/error) maka thread akan mengembalikan intrinsic lock
+  - jika menggunakan synchronized method, intrinsic lock otomatis dihandle oleh java
+  
