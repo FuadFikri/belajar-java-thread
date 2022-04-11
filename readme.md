@@ -65,3 +65,10 @@ source : Programmer Zaman Now
  - saat kita menggunakan synchronized method, secara otomatis selutuh method akan ter synchronization
  - jika kita ingin menggunakan synchronization pada kode tertentu, kita bisa menggunakan synchronized statement
  - jika menggunakan synchronized statement, intrinsic lock harus dihandle manual
+
+### Deadlock
+- Kondisi dimana beberapa thread saling menunggu satu sama lain.
+- Biasanya terjadi karena thread tersebut melakukan lock dan menunggu lock dari thread lain
+- thread a lock x dan menunggu unlock y
+- thread b lock y dan menunggu unlock x
+- Masalah deadlock harus diselesaikan sendiri oleh programmer yang membuat kode program nya
