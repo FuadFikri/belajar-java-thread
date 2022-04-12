@@ -72,3 +72,15 @@ source : Programmer Zaman Now
 - thread a lock x dan menunggu unlock y
 - thread b lock y dan menunggu unlock x
 - Masalah deadlock harus diselesaikan sendiri oleh programmer yang membuat kode program nya
+
+
+
+### Thread Communication
+- dalam multithreading programming, kadang kita membutuhkan sebuah thread yang perlu menunggu thread lain menyelesaikan tugas tertentu.
+- tidak ada cara otomatis komunikasi antar thread secara langsung
+- programmer harus melakukannya secara manual
+
+#### Manual
+- menggunakan looping (tidak direkomendasikan) 
+- menggunakanBuang-buang resource CPU dan juga jika terjadi interrupt, loop akan terus berjalan tanpa henti
+
