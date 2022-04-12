@@ -89,3 +89,8 @@ source : Programmer Zaman Now
 - kita bisa membuat object apapun menjadi lock dan menggunakan wait() untuk menunggu
 - dan menggunakan notify() untuk memberitahu data sudah tersedia
 - notify() akan memberi tahu thread lain yang sedang melakukan wait() bahwa proses bisa dilanjutkan
+
+
+### Timer
+- Timer merupakan class untuk memfasilitasi eksekusi job secara asynchronous di masa depan
+- Timer bisa di schedule untuk berjalan satu kali (delayed job), atau bisa berjalan berulang kali (repeated job)
