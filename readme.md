@@ -84,3 +84,8 @@ source : Programmer Zaman Now
 - menggunakan looping (tidak direkomendasikan) 
 - menggunakanBuang-buang resource CPU dan juga jika terjadi interrupt, loop akan terus berjalan tanpa henti
 
+#### Wait and Notify
+- Java sudah menyediakan solusi yang lebih baik untuk thread communication dengan menambahkan method wait dan notify di java.lang.Object
+- kita bisa membuat object apapun menjadi lock dan menggunakan wait() untuk menunggu
+- dan menggunakan notify() untuk memberitahu data sudah tersedia
+- notify() akan memberi tahu thread lain yang sedang melakukan wait() bahwa proses bisa dilanjutkan
