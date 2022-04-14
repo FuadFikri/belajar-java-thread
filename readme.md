@@ -94,3 +94,26 @@ source : Programmer Zaman Now
 ### Timer
 - Timer merupakan class untuk memfasilitasi eksekusi job secara asynchronous di masa depan
 - Timer bisa di schedule untuk berjalan satu kali (delayed job), atau bisa berjalan berulang kali (repeated job)
+
+
+## Management Thread
+
+- Thread merupakan object yang sangat 'mahal' . pembuatan object thread bisa memakan memory 512kb - 1mb
+- Jika kita tidak mengatur pembuatan thread dengan baik, bisa jadi aplikasi kita akan kehabisan memori
+- pembuatan thread secara manual tidak disarankan. di java modern sekarang, disarankan menggunakan thread pool
+- 
+### Thread pool
+- Threadpool merupakan class yang digunakan untuk management thread
+- kita tidak perlu membuat thread secara manual
+- thread pool bisa melakukan reusable thread yg sudah selesai bekerja
+- Threadpool di Java direpresentasikan dalam class bernama ThreadPoolExecutor
+
+#### pengaturan thread pool
+- core pool -> minimal thread yang akan dibuat ketika thread pool dibuat
+- max pool -> maximal thread yang bisa dibuat
+- keep alive time -> berapa lama thread akan dihapus jika tidak bekerja
+- queue -> antrian untuk menampung pekerjaan yang dikirim ke queue
+
+### eksekusi runnable
+- menggunakan method execute() milik threadpool
+- Secara otomatis data runnable akan dikirim ke queue threadpool untuk dieksekusi oleh thread yang terdapat di threadpool
