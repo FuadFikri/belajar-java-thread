@@ -10,7 +10,7 @@ public class ThreadPoolTest {
 
 
     @Test
-    void  create() {
+    void create() {
         var minThread = 10;
         var maxThread = 10;
         var alive = 1;
@@ -18,12 +18,12 @@ public class ThreadPoolTest {
         var queue = new ArrayBlockingQueue<Runnable>(100);
 
 
-        var threadpool = new ThreadPoolExecutor(minThread,maxThread,alive,aliveTime, queue);
+        var threadpool = new ThreadPoolExecutor(minThread, maxThread, alive, aliveTime, queue);
 
     }
 
     @Test
-    void  executeRunnable() throws InterruptedException {
+    void executeRunnable() throws InterruptedException {
         var minThread = 10;
         var maxThread = 10;
         var alive = 1;
@@ -31,7 +31,7 @@ public class ThreadPoolTest {
         var queue = new ArrayBlockingQueue<Runnable>(100);
 
 
-        var threadPoolExecutor = new ThreadPoolExecutor(minThread,maxThread,alive,aliveTime, queue);
+        var threadPoolExecutor = new ThreadPoolExecutor(minThread, maxThread, alive, aliveTime, queue);
 
 
         Runnable runnable = () -> {
@@ -47,7 +47,33 @@ public class ThreadPoolTest {
 
         Thread.sleep(6000);
 
+    }
 
+    @Test
+    void stopThreadPool() throws InterruptedException {
+        var minThread = 10;
+        var maxThread = 100;
+        var alive = 1;
+        var aliveTime = TimeUnit.MINUTES;
+        var queue = new ArrayBlockingQueue<Runnable>(10000);
+
+
+        var threadPoolExecutor = new ThreadPoolExecutor(minThread, maxThread, alive, aliveTime, queue);
+
+        for (int i = 0; i < 1000; i++) {
+
+Thread.sleep(100);
+            int finalI = i;
+            Runnable runnable = () -> {
+                System.out.println("task " + finalI + "runnable thread : " + Thread.currentThread().getName());
+
+            };
+            threadPoolExecutor.execute(runnable);
+        }
+//
+//        threadPoolExecutor.shutdown();
+//        threadPoolExecutor.awaitTermination(1, TimeUnit.MINUTES);
+//        threadPoolExecutor.shutdownNow().forEach(runnable -> System.out.println(runnable));
 
     }
 }

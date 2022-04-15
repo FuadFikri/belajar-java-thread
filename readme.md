@@ -114,6 +114,14 @@ source : Programmer Zaman Now
 - keep alive time -> berapa lama thread akan dihapus jika tidak bekerja
 - queue -> antrian untuk menampung pekerjaan yang dikirim ke queue
 
+
 ### eksekusi runnable
 - menggunakan method execute() milik threadpool
 - Secara otomatis data runnable akan dikirim ke queue threadpool untuk dieksekusi oleh thread yang terdapat di threadpool
+
+
+### MEnghentikan thread pool
+- Jika kita sudah selesai menggunakan threadpool, dan tidak akan menggunakannya lagi, ada baiknya kita hentikan dan matikan ThreadPool nya
+- Caranya kita bisa menggunakan method shutdown() untuk menghentikan threadpool, jika ada pekerjaan yang belum dikerjakan, maka akan di ignore
+- Atau gunakan shutdownNow() untuk menghentikan threadpool, namun pekerjaan yang belum dikerjakan akan dikembalikan
+- Atau jika kita ingin menunggu sampai threadpool selesai, kita bisa gunakan awaitTermination()
