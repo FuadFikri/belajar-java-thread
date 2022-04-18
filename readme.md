@@ -125,3 +125,10 @@ source : Programmer Zaman Now
 - Caranya kita bisa menggunakan method shutdown() untuk menghentikan threadpool, jika ada pekerjaan yang belum dikerjakan, maka akan di ignore
 - Atau gunakan shutdownNow() untuk menghentikan threadpool, namun pekerjaan yang belum dikerjakan akan dikembalikan
 - Atau jika kita ingin menunggu sampai threadpool selesai, kita bisa gunakan awaitTermination()
+
+
+### Rejected Handler
+- Jika queue penuh dan semua thread juga sedang bekerja, maka secara otomatis akan dihanlde oleh object RejectedExecutionHandler
+- secara default, implementasi rejected handler ini akan mengembalikan exception RejectedExecutionException ketika kita submit runnable
+- Kita bisa membuat rejected handler sendiri
+
