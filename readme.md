@@ -147,3 +147,17 @@ source : Programmer Zaman Now
 - newFixedThreadPool(n) -> membuat thread pool dengan jumlah min dan max fixed berupa n
 - newSingleThreadExecutors() -> Membuat thread pool dengan jumlah min dan max 1
 - newCacheThreadPool() -> membuat thread pool dengan jumlah thread yang bisa bertambah sampai tak hingga
+
+
+
+### Callable
+- jika kita menggunakan runnable, maka kita tidak dapat mendapatkan data return karena runnable adalah void
+- Callable mirip seperti runable, bedanya callable dapat mengembalikan data
+- Callable bertipe generic, sehingga kita dapat menentukan tipe returnnya
+- kita bisa menggunakan method submit() pada executorService untuk mengeksekusi callable, dan akan memberikan return Future<T>
+
+
+### Future
+- Future merupakan representasi data yang akan dikembalikan oleh proses asynchronous
+- Menggunakan Future, kita bisa mengecek apakah pekerjaan Callable sudah selesai atau belum, dan juga mendapat data hasil dari Callable
+
