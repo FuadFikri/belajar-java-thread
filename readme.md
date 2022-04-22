@@ -132,3 +132,18 @@ source : Programmer Zaman Now
 - secara default, implementasi rejected handler ini akan mengembalikan exception RejectedExecutionException ketika kita submit runnable
 - Kita bisa membuat rejected handler sendiri
 
+
+### Executor Service
+- ThreadPoolExecutor merupakan implementasi dari interface executor dan ExecutorService
+- Dalam kebayakan kasus, jarang sekali membuat ThreadPool secara manual, biasanya untuk mengeksekusi runnable kita akan menggunakan Executor Service
+
+
+### Executors
+- ExecutorService adalah interface, salah satu implementasinya adalah ThreadPoolExecutor
+- namun, ada yang lebih mudah yaitu menggunakan class Executors
+- Jumlah queue tidak terbatas
+
+#### Executors Method
+- newFixedThreadPool(n) -> membuat thread pool dengan jumlah min dan max fixed berupa n
+- newSingleThreadExecutors() -> Membuat thread pool dengan jumlah min dan max 1
+- newCacheThreadPool() -> membuat thread pool dengan jumlah thread yang bisa bertambah sampai tak hingga
