@@ -161,3 +161,15 @@ source : Programmer Zaman Now
 - Future merupakan representasi data yang akan dikembalikan oleh proses asynchronous
 - Menggunakan Future, kita bisa mengecek apakah pekerjaan Callable sudah selesai atau belum, dan juga mendapat data hasil dari Callable
 
+#### Future Method
+- get() mengambil result data, jika belum ada maka akan ditunggu sampai ada
+- get(timeout, time unit) mengambil result data, jika belum ada maka ditunggu samapai timeout
+- void cancel(mayINterrupt) membatalkan callable.  apakah diperbolehkan di interrupt jika sudah terlanjur berjalan
+- boolean isCancelled() -> mengecek apakah future dibatalkan
+- boolean isDone() -> cek apakah future telah selesai
+
+
+### InvokeAll
+- ExecutorService memiliki method bernama  invokeAll(Collection<Callable<T>>) untuk mengeksekusi banyak Callable secara sekaligus
+- Ini cocok ketika ada kasus kita ingin menjalankan proses asynchronous secara parallel sebanyak jumlah thread di threadpool
+- Hal ini bisa mempercepat proses dibanding kita eksekusi satu persatu

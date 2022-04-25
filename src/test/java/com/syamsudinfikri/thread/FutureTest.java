@@ -2,10 +2,10 @@ package com.syamsudinfikri.thread;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+import java.util.List;
+import java.util.concurrent.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class FutureTest {
 
@@ -20,11 +20,11 @@ public class FutureTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-           return "Hi... ";
+            return "Hi... ";
         });
 
 //        isDone -> mengecek apakah future sudah selesai
-        while (!future.isDone()){
+        while (!future.isDone()) {
             System.out.println("waiting result");
             Thread.sleep(1000);
         }
@@ -34,7 +34,6 @@ public class FutureTest {
 
         System.out.println(future.get());
     }
-
 
 
     @Test
@@ -83,6 +82,22 @@ public class FutureTest {
         String value = future.get();
         System.out.println(value);
     }
+
+    @Test
+    public void invokeAllTest() throws InterruptedException, ExecutionException {
+        var executor = Executors.newFixedThreadPool(10);
+        List<Callable<String>> callables = IntStream.range(1, 11).mapToObj(value -> (Callable<String>) () -> {
+            Thread.sleep(value * 100l);
+            return String.valueOf(value);
+        }).collect(Collectors.toList());
+
+        List<Future<String>> futures = executor.invokeAll(callables);
+        for (Future<String> future : futures) {
+            System.out.println(future.get());
+        }
+
+    }
+
 
 
 
