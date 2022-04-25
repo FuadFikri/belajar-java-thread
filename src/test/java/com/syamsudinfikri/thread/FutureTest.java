@@ -99,6 +99,19 @@ public class FutureTest {
     }
 
 
+    @Test
+    public void invokeAny() throws InterruptedException, ExecutionException {
+        var executor = Executors.newFixedThreadPool(10);
+        List<Callable<String>> callables = IntStream.range(1, 11).mapToObj(value -> (Callable<String>) () -> {
+            Thread.sleep(value * 1000L);
+            return String.valueOf(value);
+        }).collect(Collectors.toList());
+
+        String future = executor.invokeAny(callables);
+        System.out.println(future);
+    }
+
+
 
 
 

@@ -173,3 +173,9 @@ source : Programmer Zaman Now
 - ExecutorService memiliki method bernama  invokeAll(Collection<Callable<T>>) untuk mengeksekusi banyak Callable secara sekaligus
 - Ini cocok ketika ada kasus kita ingin menjalankan proses asynchronous secara parallel sebanyak jumlah thread di threadpool
 - Hal ini bisa mempercepat proses dibanding kita eksekusi satu persatu
+
+
+### InvokeAny
+- mengeksekusi beberapa proses secara asynchronous, namun ingin mendapatkan hasil yang paling cepat
+- InvokeAny() akan mengembalikan result data dari callable yang paling cepat mengembalikan result
+
