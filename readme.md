@@ -179,3 +179,10 @@ source : Programmer Zaman Now
 - mengeksekusi beberapa proses secara asynchronous, namun ingin mendapatkan hasil yang paling cepat
 - InvokeAny() akan mengembalikan result data dari callable yang paling cepat mengembalikan result
 
+
+
+### CompletableFuture
+- mulai java 8
+- jika kita perlu membuat future secara manual, sehingga tidak memerlukan Callable
+- untuk memberi value pada CompletableFuture secara manual, kita bisa menggunakan method complete(value)
+- atau completeExceptionally(error) untuk error
