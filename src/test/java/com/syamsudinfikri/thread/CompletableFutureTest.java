@@ -13,13 +13,13 @@ public class CompletableFutureTest {
 
     private Random random = new Random();
 
-    public Future<String> getValue() {
+    public CompletableFuture<String> getValue() {
         CompletableFuture<String> future = new CompletableFuture<>();
 
         executorService.execute(() -> {
             try {
                 Thread.sleep(2000);
-                future.complete("selesai");
+                future.complete("Fuad Fikri S");
             } catch (InterruptedException e) {
                 e.printStackTrace();
                 future.completeExceptionally(e);
@@ -62,6 +62,24 @@ public class CompletableFutureTest {
         this.execute(future," Thread C");
 
         System.out.println(future.get());
+    }
+
+
+    @Test
+    void completionStage() throws ExecutionException, InterruptedException {
+        CompletableFuture<String> future = getValue();
+        future.thenApply(String::toUpperCase)
+                .thenApply(s -> s.split(" "))
+               .thenAccept(strings -> {
+                   for (String string : strings) {
+                       System.out.println(string);
+                   }
+               }).get();
+
+//       String[] strings = future2.get();
+//        for (String string : strings) {
+//            System.out.println(string);
+//        }
     }
 
 

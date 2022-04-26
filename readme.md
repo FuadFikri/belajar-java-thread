@@ -186,3 +186,8 @@ source : Programmer Zaman Now
 - jika kita perlu membuat future secara manual, sehingga tidak memerlukan Callable
 - untuk memberi value pada CompletableFuture secara manual, kita bisa menggunakan method complete(value)
 - atau completeExceptionally(error) untuk error
+
+### Completion Stage
+- CompletableFuture merupakan turunan dari interface CompletionStage
+- CompletionStage merupakan fitur dimana kita bisa menambahkan asynchronous computation, tanpa harus menunggu dulu data dari Future nya ada
+- CompletionStage sangat mirip dengan operation di Java Stream, hanya saja tidak sekomplit di Java Stream
