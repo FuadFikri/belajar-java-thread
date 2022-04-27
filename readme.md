@@ -217,3 +217,15 @@ source : Programmer Zaman Now
 - Setiap object Atomic class akan mengelola data yang diakses dan di update menggunakan method yang telah disediakan
 - Atomic class melakukan implementasi Compare-and-Swap untuk mendukung synchronization
 - Dengan menggunakan Atomic, kita tidak perlu lagi menggunakan synchronized secara manual
+
+
+### Locks Package
+- high level concurrency package untuk melakukan locking dan waiting for condition
+- pengganti synchronized dan manual wait() dan notify()
+
+#### Lock Interface
+- Mencegah race condition
+- alternatif implementasi dari synchronized method dan synchronized statement
+- untuk melakukan lock bisa menggunakan method lock()
+- unlock() untuk melepas lock
+- implementasi dari interface LOck adalah class ReetrantLock
