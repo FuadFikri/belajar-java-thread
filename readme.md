@@ -94,7 +94,7 @@ source : Programmer Zaman Now
 ### Timer
 - Timer merupakan class untuk memfasilitasi eksekusi job secara asynchronous di masa depan
 - Timer bisa di schedule untuk berjalan satu kali (delayed job), atau bisa berjalan berulang kali (repeated job)
-
+- Sekarang, lebih direkomendasikan menggunakan Scheduled Executor Service dari pada Timer
 
 ## Management Thread
 
@@ -198,3 +198,14 @@ source : Programmer Zaman Now
 - Kadang ada kebutuhan misal kita butuh menjalankan sesuatu secara parallel, lalu ada thread yang melakukan eksekusi task dan  thread lain menunggu hasil nya
   Kita bisa menggunakan CompletionService untuk melakukan itu
   Implementasi interface CompletionService adalah class ExecutorCompletionService
+
+
+### Scheduled Executor Service
+- ExecutorService memiliki sub child interface bernama ScheduledExecutorService
+- Fitur tambahan di ScheduledExecutorService adalah, kita bisa melakukan asynchronous task yang terjadwal
+- Hal ini cocok untuk kasus delayed job (pekerjaan yang butuh ditangguhkan pengerjaannya) dan periodic job
+- ScheduledExecutorService merupakan fitur yang bisa menggantikan low level penggunaan Timer
+- Hampir semua method di ScheduledExecutorService mengembalikan ScheduledFuture
+- ScheduledFuture mirip seperti Future
+- Untuk membuat ScheduledExecutorService kita bisa menggunakan implementasi class ScheduledThreadPoolExecutor 
+- atau bisa gunakan class Executors, terdapat method newSingleThreadScheduledExecutor() dan newScheduledThreadPool(poolSize) untuk membuat ScheduledExecutorService
