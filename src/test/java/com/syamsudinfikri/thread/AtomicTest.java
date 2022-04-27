@@ -55,6 +55,6 @@ public class AtomicTest {
         thread2.join();
         thread3.join();
 
-        System.out.println(counter.getValue()); // output : 1083127
+        System.out.println(counter.getValue()); // output : 3000 000
     }
 }

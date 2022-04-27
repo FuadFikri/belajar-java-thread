@@ -228,4 +228,12 @@ source : Programmer Zaman Now
 - alternatif implementasi dari synchronized method dan synchronized statement
 - untuk melakukan lock bisa menggunakan method lock()
 - unlock() untuk melepas lock
-- implementasi dari interface LOck adalah class ReetrantLock
+- implementasi dari interface Lock adalah class ReetrantLock
+
+
+#### ReadWriteLock
+- Kadang ada kondisi dimana kita ingin membedakan lock antara operasi update dan operasi get
+- Untuk kasus seperti ini, kita bisa saja membuat dua buah variable Lock
+- Namun, di Java disediakan cara yang lebih mudah, yaitu menggunakan interface ReadWriteLock
+- ReadWriteLock merupakan lock yang mendukung dua jenis operasi, read dan write
+- Implementasi dari interface ReadWriteLock adalah class ReentrantReadWriteLock
