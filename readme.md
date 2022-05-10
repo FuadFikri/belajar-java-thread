@@ -237,3 +237,10 @@ source : Programmer Zaman Now
 - Namun, di Java disediakan cara yang lebih mudah, yaitu menggunakan interface ReadWriteLock
 - ReadWriteLock merupakan lock yang mendukung dua jenis operasi, read dan write
 - Implementasi dari interface ReadWriteLock adalah class ReentrantReadWriteLock
+
+
+#### Conditional Interface
+- Condition merupakan alternatif lain dari monitor method (wait, notify dan notifyAll)
+- saat ini, sangat disarankan menggunakan Condition dibanding monitor method
+- Condition memiliki method wait() untuk menunggu, signal() untuk mentrigger satu thread, dan signalAll() untuk mentrigger semua thread yang menunggu
+- cara pembuatan Condition, kita bisa menggunakan method newCondition() milik Lock
