@@ -244,3 +244,22 @@ source : Programmer Zaman Now
 - saat ini, sangat disarankan menggunakan Condition dibanding monitor method
 - Condition memiliki method wait() untuk menunggu, signal() untuk mentrigger satu thread, dan signalAll() untuk mentrigger semua thread yang menunggu
 - cara pembuatan Condition, kita bisa menggunakan method newCondition() milik Lock
+
+
+### Synchronizer
+- improvement dari Locks, namun digunakan dalam kasus2 tertentu
+- Isi dari class-class Synchronizer banyak menggunakan locks, namun kita tidak perlu melakukannya secara manual, karena sudah diatur secara otomatis oleh class-class nya sendiri
+- class-class yg bisa kita gunakan untuk synchronizer
+- Semaphore
+- CountDownLatch
+- CyclicBarrier
+- Phaser, dan
+- Exchanger
+
+
+
+#### Semaphore
+- class untuk manage data counter
+- Membatasi jumlah Thread yang running
+- Nilai counter bisa naik, namun ada batas maksimal nya, jika batas maksimal nya sudah tercapai, semua thread yang akan mencoba menaikkan harus menunggu, sampai ada thread lain yang menurunkan nilai counter
+- Semaphore cocok sekali misal untuk menjaga agar thread berjalan pada maksimal total counter yang sudah kita tentukan
