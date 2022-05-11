@@ -271,3 +271,9 @@ source : Programmer Zaman Now
 - setelah proses selesai kita akan menurunkan counter
 - jika counter sudah 0, maka yang melakukan wait bisa lanjut berjalan
 - CountDownLatch cocok jika kita ingin menunggu beberapa proses yang berjalan secara asynchronous sampai semua proses selesai
+
+
+### CyclicBarrier
+- fitur yang bisa kita gunakan untuk saling menunggu, sampai jumlah thread yang menunggu terpenuhi
+- Diawal kita akan tentukan berapa jumlah thread yang menunggu, jika sudah terpenuhi, maka secara otomatis proses menunggu akan selesai
+- analogi : menunggu peserta datang, ketika jumlah peserta sudah memenuhi syarat minimal pertandingan, maka lomba bisa dimulai
