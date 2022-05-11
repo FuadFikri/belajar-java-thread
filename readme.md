@@ -263,3 +263,11 @@ source : Programmer Zaman Now
 - Membatasi jumlah Thread yang running
 - Nilai counter bisa naik, namun ada batas maksimal nya, jika batas maksimal nya sudah tercapai, semua thread yang akan mencoba menaikkan harus menunggu, sampai ada thread lain yang menurunkan nilai counter
 - Semaphore cocok sekali misal untuk menjaga agar thread berjalan pada maksimal total counter yang sudah kita tentukan
+
+
+### CountDownLatch
+- Synchronizer yang digunakan untuk menunggu beberapa proses selesai
+- cara kerjanya mirip semaphore hanya saja counter di awal sudah ditentukan
+- setelah proses selesai kita akan menurunkan counter
+- jika counter sudah 0, maka yang melakukan wait bisa lanjut berjalan
+- CountDownLatch cocok jika kita ingin menunggu beberapa proses yang berjalan secara asynchronous sampai semua proses selesai
