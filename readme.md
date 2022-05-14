@@ -277,3 +277,11 @@ source : Programmer Zaman Now
 - fitur yang bisa kita gunakan untuk saling menunggu, sampai jumlah thread yang menunggu terpenuhi
 - Diawal kita akan tentukan berapa jumlah thread yang menunggu, jika sudah terpenuhi, maka secara otomatis proses menunggu akan selesai
 - analogi : menunggu peserta datang, ketika jumlah peserta sudah memenuhi syarat minimal pertandingan, maka lomba bisa dimulai
+
+### Phaser
+- fitur synchronizer mirip cyclic barrier dan countDownLatch
+- pada Phaser counter bisa berubah 
+- menaikan counter dengan method register( ), bulkRegister(int)
+- menutunkan counter dengan method arrive( )
+- bisa menggunakan wait(int) untuk menunggu sampai jumlah register tertentu.
+
