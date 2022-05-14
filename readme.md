@@ -285,3 +285,8 @@ source : Programmer Zaman Now
 - menutunkan counter dengan method arrive( )
 - bisa menggunakan wait(int) untuk menunggu sampai jumlah register tertentu.
 
+### Exchanger
+- fitur synchornizer untuk pertukaran data antar thread
+- jika data belum tersedia, maka thread yang melakukan pertukaran akan menunggu sampai ada
+- thread 1 mengirim ke thread2
+- thread 2 mengirim ke thread 1
