@@ -290,3 +290,21 @@ source : Programmer Zaman Now
 - jika data belum tersedia, maka thread yang melakukan pertukaran akan menunggu sampai ada
 - thread 1 mengirim ke thread2
 - thread 2 mengirim ke thread 1
+
+## Concurrent Collection
+- Blocking Queue
+- ConcurrentMap
+
+### Blocking Queue
+- Interface
+- BlockingQueue mendukung method wait ketika mengambil data, dan juga wait ketika menyimpan data
+- Jika queue kosong, thread yang mengambil data akan diminta untuk menunggu sampai data ada
+- Dan jika queue penuh, thread yang mengambil data akan diminta untuk menunggu sampai ada tempat kosong
+- class turunannya : LinkedBlockingQueue, ArrayBlockingQueue, DelayQueue, PriorityBlockingQueue, SynchronousQueue, LinkedBlockingDeque, LinkedTransferQueue
+- ArrayBlockingQueue : implementasi BlockingQueue dengan ukuran fixed
+- LinkedBlockingQueue : implementasi BlockingQueue dengan ukuran bisa berkembang
+- PriorityBlockingQueue : implementasi BlockingQueue untuk otomatis berurut berdasar prioritas
+- DelayedQueue : implementasi BlockingQueue untuk tipe data Delayed, dimana data tidak bisa diambil sebelum waktu delay yang telah ditentukan
+- SynchronousQueue:  implementasi BlockingQueue dimana thread yang menambah data harus menunggu sampai ada thread yang mengambil data, begitu juga kebalikannya
+
+
