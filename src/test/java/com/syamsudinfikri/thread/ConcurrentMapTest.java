@@ -2,6 +2,8 @@ package com.syamsudinfikri.thread;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
@@ -46,4 +48,11 @@ public class ConcurrentMapTest {
 
     }
 
+
+    @Test
+    void collection() {
+        List<String> list= List.of("fikri", "sy","a");
+        Collections.synchronizedList(list);
+
+    }
 }

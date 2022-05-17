@@ -311,4 +311,9 @@ source : Programmer Zaman Now
 ## Concurrent Map
 - Map yang thread-safe
 - implementasinya adalah ConcurrentHashMap
+
+## Konversi dari Java Collections agar thread safe
+- Collections.synchronizedList(list);
+- Collections.synchronizedMap(map)
+- Collections.synchronized....
 - 
