@@ -308,3 +308,7 @@ source : Programmer Zaman Now
 - SynchronousQueue:  implementasi BlockingQueue dimana thread yang menambah data harus menunggu sampai ada thread yang mengambil data, begitu juga kebalikannya
 
 
+## Concurrent Map
+- Map yang thread-safe
+- implementasinya adalah ConcurrentHashMap
+- 
