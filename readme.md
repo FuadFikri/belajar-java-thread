@@ -322,3 +322,7 @@ source : Programmer Zaman Now
 - ThreadLocal merupakan fitur di Java untuk menyimpan data
 - ThreadLocal memberi kita kemampuan untuk menyimpan data yang hanya bisa digunakan di thread tersebut
 - Tiap thread akan memiliki data yang berbeda dan tidak saling terhubung antar thread
+
+## Thread Local Random
+- Saat menggunakan object Random secara parallel, maka di dalam class Random kita akan melakukan sharing variable, hal ini membuat class Random tidak aman dan juga lambat
+- Oleh karena itu terdapat class ThreadLocalRandom, ThreadLocalRandom merupakan class yang seperti ThreadLocal, namun spesial untuk Random, sehingga kita bisa membuat angka random tanpa khawatir dengan race condition, karena object Random nya akan berbeda tiap thread
